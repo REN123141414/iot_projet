@@ -1,0 +1,21 @@
+<circuit version="1.1.0-SR2" rev="260312" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Subcircuit" CircId="Uno-1" mainComp="false" Show_id="true" Show_Val="false" Pos="16,-256" rotation="0" hflip="1" vflip="1" label="Uno-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Logic_Symbol="false">
+<mainCompProps MainCompId="mega328-109" Frequency="16 MHz" Program="build/clignotement_led.ino.hex" Auto_Load="false" saveEepr="true" MainMcu="true" SerialMon="-1" />
+</item>
+
+<item itemtype="Resistor" CircId="Resistor-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-200,-224" rotation="0" hflip="1" vflip="1" label="Resistor-3" idLabPos="-16,-24" labelrot="0" valLabPos="-12.5386,10.6152" valLabRot="0" Resistance="100 Ω" />
+
+<item itemtype="Led" CircId="Led-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-380,-224" rotation="-180" hflip="1" vflip="1" label="Led-7" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Node" CircId="Node-8" mainComp="false" Pos="-188,-224" />
+
+<item itemtype="Connector" uid="Connector-12" startpinid="Node-8-1" endpinid="Uno-1-2" pointList="-188,-224,24,-224" />
+
+<item itemtype="Connector" uid="Connector-13" startpinid="Led-7-lPin" endpinid="Node-8-0" pointList="-364,-224,-188,-224" />
+
+<item itemtype="Connector" uid="Connector-14" startpinid="Node-8-2" endpinid="Resistor-3-rPin" pointList="-188,-224,-184,-224" />
+
+<item itemtype="Connector" uid="Connector-15" startpinid="Led-7-rPin" endpinid="Uno-1-GND2" pointList="-396,-224,-396,-120,24,-120" />
+
+</circuit>

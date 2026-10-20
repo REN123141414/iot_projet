@@ -1,0 +1,19 @@
+# Fichiers temporaires
+*.tmp
+*.log
+
+# Fichiers macOS
+.DS_Store
+
+# Fichiers de configuration sensibles
+.env
+.env.*
+
+# Fichiers generes par la compilation Arduino
+**/build/
+
+# Environnements et caches
+__pycache__/
+.venv/
+venv/
+node_modules/
