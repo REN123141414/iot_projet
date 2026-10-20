@@ -17,3 +17,6 @@ __pycache__/
 .venv/
 venv/
 node_modules/
+
+# Fichiers de compilation supplementaires
+**/build_final/
