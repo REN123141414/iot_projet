@@ -50,3 +50,13 @@ cd simulide/clignotement_led
 arduino-cli compile --fqbn arduino:avr:uno --output-dir build clignotement_led.ino
 
 Le fichier HEX genere peut ensuite etre charge dans SimulIDE pour lancer la simulation.
+
+## Suivi du projet avec Git
+
+Ce projet utilise Git pour conserver l'historique des modifications.
+
+Les différentes étapes du projet IoT sont enregistrées
+avec des commits.
+
+Une branche documentation est utilisée pour améliorer
+le README.md avant son intégration dans la branche main.
