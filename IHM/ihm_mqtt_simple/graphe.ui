@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+  <class>GraphWindow</class>
+  <widget class="QDialog" name="GraphWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1240</width>
+        <height>880</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>TempHumiX — Historique des mesures</string>
+    </property>
+    <layout class="QVBoxLayout" name="graphRoot">
+      <item>
+        <widget class="QLabel" name="graphTitle">
+          <property name="text">
+            <string>Historique des mesures</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="graphFilters">
+          <item>
+            <widget class="QLabel" name="graphSensorCaption">
+              <property name="text">
+                <string>Capteur</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QLabel" name="cmbSensor" />
+          </item>
+          <item>
+            <widget class="QLabel" name="dteStartTimeCaption">
+              <property name="text">
+                <string>Début</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QDateTimeEdit" name="dteStartTime">
+              <property name="calendarPopup">
+                <bool>true</bool>
+              </property>
+              <property name="displayFormat">
+                <string>dd/MM/yyyy HH:mm:ss</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QLabel" name="dteEndTimeCaption">
+              <property name="text">
+                <string>Fin</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QDateTimeEdit" name="dteEndTime">
+              <property name="calendarPopup">
+                <bool>true</bool>
+              </property>
+              <property name="displayFormat">
+                <string>dd/MM/yyyy HH:mm:ss</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+      <item>
+        <widget class="QGraphicsView" name="graphicsView">
+          <property name="minimumHeight">
+            <number>420</number>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QLabel" name="lblResult">
+          <property name="text">
+            <string>Choisir un intervalle puis charger les données.</string>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <layout class="QHBoxLayout" name="graphButtons">
+          <item>
+            <widget class="QPushButton" name="btnLoadData">
+              <property name="text">
+                <string>Charger les données</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="btnClearData">
+              <property name="text">
+                <string>Effacer les courbes</string>
+              </property>
+            </widget>
+          </item>
+          <item>
+            <widget class="QPushButton" name="btnClose">
+              <property name="text">
+                <string>Fermer</string>
+              </property>
+            </widget>
+          </item>
+        </layout>
+      </item>
+    </layout>
+  </widget>
+  <resources />
+  <connections />
+</ui>

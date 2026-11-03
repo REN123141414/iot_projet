@@ -1,0 +1,1300 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="windowTitle">
+      <string>TempHumiX — Supervision IoT</string>
+    </property>
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1180</width>
+        <height>780</height>
+      </rect>
+    </property>
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QHBoxLayout" name="shellLayout">
+        <property name="spacing">
+          <number>0</number>
+        </property>
+        <property name="leftMargin">
+          <number>0</number>
+        </property>
+        <property name="topMargin">
+          <number>0</number>
+        </property>
+        <property name="rightMargin">
+          <number>0</number>
+        </property>
+        <property name="bottomMargin">
+          <number>0</number>
+        </property>
+        <item>
+          <widget class="QFrame" name="sidebar">
+            <property name="minimumWidth">
+              <number>196</number>
+            </property>
+            <property name="maximumWidth">
+              <number>196</number>
+            </property>
+            <layout class="QVBoxLayout" name="sidebarLayout">
+              <property name="spacing">
+                <number>8</number>
+              </property>
+              <property name="leftMargin">
+                <number>18</number>
+              </property>
+              <property name="topMargin">
+                <number>18</number>
+              </property>
+              <property name="rightMargin">
+                <number>18</number>
+              </property>
+              <property name="bottomMargin">
+                <number>18</number>
+              </property>
+              <item>
+                <layout class="QHBoxLayout" name="brandLayout">
+                  <property name="spacing">
+                    <number>8</number>
+                  </property>
+                  <item>
+                    <widget class="QLabel" name="brandMark">
+                      <property name="text">
+                        <string>T</string>
+                      </property>
+                      <property name="minimumWidth">
+                        <number>30</number>
+                      </property>
+                      <property name="maximumWidth">
+                        <number>30</number>
+                      </property>
+                      <property name="minimumHeight">
+                        <number>32</number>
+                      </property>
+                      <property name="maximumHeight">
+                        <number>32</number>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="brandName">
+                      <property name="text">
+                        <string>TempHumiX</string>
+                      </property>
+                    </widget>
+                  </item>
+                </layout>
+              </item>
+              <item>
+                <widget class="QLabel" name="brandSub">
+                  <property name="text">
+                    <string>SENSOR WORKSPACE</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QLabel" name="navCaption">
+                  <property name="text">
+                    <string>ESPACE DE TRAVAIL</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QPushButton" name="btnOverview">
+                  <property name="text">
+                    <string>Vue d’ensemble</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QPushButton" name="btnCurves">
+                  <property name="text">
+                    <string>Historique</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QPushButton" name="btnHardware">
+                  <property name="text">
+                    <string>Équipement</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QPushButton" name="btnSettings">
+                  <property name="text">
+                    <string>Connexion</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <widget class="QPushButton" name="btnLogs">
+                  <property name="text">
+                    <string>Journal</string>
+                  </property>
+                </widget>
+              </item>
+              <item>
+                <spacer name="sidebarStretch">
+                  <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                    <size>
+                      <width>10</width>
+                      <height>10</height>
+                    </size>
+                  </property>
+                </spacer>
+              </item>
+              <item>
+                <widget class="QLabel" name="sidebarFooter">
+                  <property name="text">
+                    <string>IMT NORD EUROPE
+Projet Internet des objets</string>
+                  </property>
+                </widget>
+              </item>
+            </layout>
+          </widget>
+        </item>
+        <item>
+          <widget class="QWidget" name="mainContent">
+            <layout class="QVBoxLayout" name="rootLayout">
+              <property name="spacing">
+                <number>24</number>
+              </property>
+              <property name="leftMargin">
+                <number>30</number>
+              </property>
+              <property name="topMargin">
+                <number>30</number>
+              </property>
+              <property name="rightMargin">
+                <number>30</number>
+              </property>
+              <property name="bottomMargin">
+                <number>30</number>
+              </property>
+              <item>
+                <layout class="QHBoxLayout" name="headerLayout">
+                  <property name="spacing">
+                    <number>14</number>
+                  </property>
+                  <item>
+                    <layout class="QVBoxLayout" name="titles">
+                      <property name="spacing">
+                        <number>5</number>
+                      </property>
+                      <item>
+                        <widget class="QLabel" name="eyebrow">
+                          <property name="text">
+                            <string>TEMP / HUMIDITÉ</string>
+                          </property>
+                        </widget>
+                      </item>
+                      <item>
+                        <widget class="QLabel" name="titleLabel">
+                          <property name="text">
+                            <string>Vue d’ensemble</string>
+                          </property>
+                        </widget>
+                      </item>
+                      <item>
+                        <widget class="QLabel" name="subtitleLabel">
+                          <property name="text">
+                            <string>Votre environnement, en un regard.</string>
+                          </property>
+                        </widget>
+                      </item>
+                    </layout>
+                  </item>
+                  <item>
+                    <spacer name="headerStretch">
+                      <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                        <size>
+                          <width>10</width>
+                          <height>10</height>
+                        </size>
+                      </property>
+                    </spacer>
+                  </item>
+                  <item>
+                    <widget class="QLabel" name="connectionBadge">
+                      <property name="text">
+                        <string>HORS LIGNE</string>
+                      </property>
+                    </widget>
+                  </item>
+                  <item>
+                    <widget class="QPushButton" name="btnQuickConnect">
+                      <property name="text">
+                        <string>Connecter</string>
+                      </property>
+                    </widget>
+                  </item>
+                </layout>
+              </item>
+              <item>
+                <widget class="QStackedWidget" name="pages">
+                  <widget class="QWidget" name="dashboardPage">
+                    <layout class="QVBoxLayout" name="dataLayout">
+                      <property name="spacing">
+                        <number>18</number>
+                      </property>
+                      <property name="leftMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                        <number>0</number>
+                      </property>
+                      <item>
+                        <layout class="QHBoxLayout" name="selectRow">
+                          <property name="spacing">
+                            <number>10</number>
+                          </property>
+                          <item>
+                            <widget class="QLabel" name="selectedCaption">
+                              <property name="text">
+                                <string>CAPTEUR</string>
+                              </property>
+                            </widget>
+                          </item>
+                          <item>
+                            <widget class="QLabel" name="cmbSensor">
+                              <property name="text">
+                                <string>44666</string>
+                              </property>
+                            </widget>
+                          </item>
+                          <item>
+                            <spacer name="selectStretch">
+                              <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                              </property>
+                              <property name="sizeHint" stdset="0">
+                                <size>
+                                  <width>10</width>
+                                  <height>10</height>
+                                </size>
+                              </property>
+                            </spacer>
+                          </item>
+                          <item>
+                            <widget class="QLabel" name="lastReceivedLabel">
+                              <property name="text">
+                                <string>En attente de la première mesure</string>
+                              </property>
+                            </widget>
+                          </item>
+                        </layout>
+                      </item>
+                      <item>
+                        <layout class="QHBoxLayout" name="cardsLayout">
+                          <property name="spacing">
+                            <number>18</number>
+                          </property>
+                          <item>
+                            <widget class="QFrame" name="tempCard">
+                              <property name="minimumHeight">
+                                <number>180</number>
+                              </property>
+                              <layout class="QVBoxLayout" name="tempCardLayout">
+                                <property name="spacing">
+                                  <number>12</number>
+                                </property>
+                                <property name="leftMargin">
+                                  <number>24</number>
+                                </property>
+                                <property name="topMargin">
+                                  <number>24</number>
+                                </property>
+                                <property name="rightMargin">
+                                  <number>24</number>
+                                </property>
+                                <property name="bottomMargin">
+                                  <number>24</number>
+                                </property>
+                                <item>
+                                  <widget class="QLabel" name="tempCaption">
+                                    <property name="text">
+                                      <string>Température</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                                <item>
+                                  <layout class="QHBoxLayout" name="tempValueRow">
+                                    <property name="spacing">
+                                      <number>8</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="tempValue">
+                                        <property name="text">
+                                          <string>—</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLabel" name="tempUnit">
+                                        <property name="text">
+                                          <string>°C</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <spacer name="tempValueStretch">
+                                        <property name="orientation">
+                                          <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                          <size>
+                                            <width>10</width>
+                                            <height>10</height>
+                                          </size>
+                                        </property>
+                                      </spacer>
+                                    </item>
+                                  </layout>
+                                </item>
+                                <item>
+                                  <widget class="QLabel" name="tempFootnote">
+                                    <property name="text">
+                                      <string>MESURE DU CAPTEUR</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                              </layout>
+                            </widget>
+                          </item>
+                          <item>
+                            <widget class="QFrame" name="humidityCard">
+                              <property name="minimumHeight">
+                                <number>180</number>
+                              </property>
+                              <layout class="QVBoxLayout" name="humidityCardLayout">
+                                <property name="spacing">
+                                  <number>12</number>
+                                </property>
+                                <property name="leftMargin">
+                                  <number>24</number>
+                                </property>
+                                <property name="topMargin">
+                                  <number>24</number>
+                                </property>
+                                <property name="rightMargin">
+                                  <number>24</number>
+                                </property>
+                                <property name="bottomMargin">
+                                  <number>24</number>
+                                </property>
+                                <item>
+                                  <widget class="QLabel" name="humidityCaption">
+                                    <property name="text">
+                                      <string>Humidité relative</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                                <item>
+                                  <layout class="QHBoxLayout" name="humidityValueRow">
+                                    <property name="spacing">
+                                      <number>8</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="humidityValue">
+                                        <property name="text">
+                                          <string>—</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLabel" name="humidityUnit">
+                                        <property name="text">
+                                          <string>%</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <spacer name="humidityValueStretch">
+                                        <property name="orientation">
+                                          <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                          <size>
+                                            <width>10</width>
+                                            <height>10</height>
+                                          </size>
+                                        </property>
+                                      </spacer>
+                                    </item>
+                                  </layout>
+                                </item>
+                                <item>
+                                  <widget class="QLabel" name="humidityFootnote">
+                                    <property name="text">
+                                      <string>MESURE DU CAPTEUR</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                              </layout>
+                            </widget>
+                          </item>
+                        </layout>
+                      </item>
+                      <item>
+                        <widget class="QFrame" name="trendPanel">
+                          <layout class="QVBoxLayout" name="trendPanelLayout">
+                            <property name="spacing">
+                              <number>12</number>
+                            </property>
+                            <property name="leftMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="topMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="rightMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="bottomMargin">
+                              <number>22</number>
+                            </property>
+                            <item>
+                              <layout class="QHBoxLayout" name="trendHeader">
+                                <property name="spacing">
+                                  <number>12</number>
+                                </property>
+                                <item>
+                                  <widget class="QLabel" name="trendTitle">
+                                    <property name="text">
+                                      <string>Évolution récente</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                                <item>
+                                  <spacer name="trendHeaderStretch">
+                                    <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                      <size>
+                                        <width>10</width>
+                                        <height>10</height>
+                                      </size>
+                                    </property>
+                                  </spacer>
+                                </item>
+                                <item>
+                                  <widget class="QLabel" name="archiveCountLabel">
+                                    <property name="text">
+                                      <string>0 mesure archivée</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                              </layout>
+                            </item>
+                            <item>
+                              <widget class="QWidget" name="chartContainer">
+                                <property name="minimumHeight">
+                                  <number>146</number>
+                                </property>
+                                <layout class="QVBoxLayout" name="chartLayout">
+                                  <property name="spacing">
+                                    <number>0</number>
+                                  </property>
+                                  <property name="leftMargin">
+                                    <number>0</number>
+                                  </property>
+                                  <property name="topMargin">
+                                    <number>0</number>
+                                  </property>
+                                  <property name="rightMargin">
+                                    <number>0</number>
+                                  </property>
+                                  <property name="bottomMargin">
+                                    <number>0</number>
+                                  </property>
+                                </layout>
+                              </widget>
+                            </item>
+                            <item>
+                              <widget class="QLabel" name="trendHint">
+                                <property name="text">
+                                  <string>30 dernières mesures · temps du capteur</string>
+                                </property>
+                              </widget>
+                            </item>
+                          </layout>
+                        </widget>
+                      </item>
+                      <item>
+                        <widget class="QFrame" name="acquisitionPanel">
+                          <layout class="QHBoxLayout" name="acquisitionLayout">
+                            <property name="spacing">
+                              <number>10</number>
+                            </property>
+                            <property name="leftMargin">
+                              <number>16</number>
+                            </property>
+                            <property name="topMargin">
+                              <number>16</number>
+                            </property>
+                            <property name="rightMargin">
+                              <number>16</number>
+                            </property>
+                            <property name="bottomMargin">
+                              <number>16</number>
+                            </property>
+                            <item>
+                              <layout class="QVBoxLayout" name="acquisitionTitles">
+                                <property name="spacing">
+                                  <number>4</number>
+                                </property>
+                                <item>
+                                  <widget class="QLabel" name="acquisitionTitle">
+                                    <property name="text">
+                                      <string>Acquisition des mesures</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                                <item>
+                                  <widget class="QLabel" name="acquisitionHint">
+                                    <property name="text">
+                                      <string>Les nouvelles valeurs sont archivées automatiquement.</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                              </layout>
+                            </item>
+                            <item>
+                              <spacer name="acquisitionStretch">
+                                <property name="orientation">
+                                  <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="sizeHint" stdset="0">
+                                  <size>
+                                    <width>10</width>
+                                    <height>10</height>
+                                  </size>
+                                </property>
+                              </spacer>
+                            </item>
+                            <item>
+                              <widget class="QPushButton" name="btnStopMeasure">
+                                <property name="text">
+                                  <string>Pause</string>
+                                </property>
+                              </widget>
+                            </item>
+                            <item>
+                              <widget class="QPushButton" name="btnStartMeasure">
+                                <property name="text">
+                                  <string>Démarrer</string>
+                                </property>
+                              </widget>
+                            </item>
+                          </layout>
+                        </widget>
+                      </item>
+                      <item>
+                        <layout class="QHBoxLayout" name="metaLayout">
+                          <property name="spacing">
+                            <number>12</number>
+                          </property>
+                          <item>
+                            <widget class="QLabel" name="deviceDateLabel">
+                              <property name="text">
+                                <string>Date du capteur : —</string>
+                              </property>
+                            </widget>
+                          </item>
+                          <item>
+                            <spacer name="metaStretch">
+                              <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                              </property>
+                              <property name="sizeHint" stdset="0">
+                                <size>
+                                  <width>10</width>
+                                  <height>10</height>
+                                </size>
+                              </property>
+                            </spacer>
+                          </item>
+                          <item>
+                            <widget class="QLabel" name="versionLabel">
+                              <property name="text">
+                                <string>Version : —</string>
+                              </property>
+                            </widget>
+                          </item>
+                          <item>
+                            <widget class="QLabel" name="databaseLabel">
+                              <property name="text">
+                                <string>Base : IOT.db</string>
+                              </property>
+                            </widget>
+                          </item>
+                        </layout>
+                      </item>
+                    </layout>
+                  </widget>
+                  <widget class="QWidget" name="hardwarePage">
+                    <layout class="QVBoxLayout" name="hardwareLayout">
+                      <property name="spacing">
+                        <number>18</number>
+                      </property>
+                      <property name="leftMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                        <number>0</number>
+                      </property>
+                      <item>
+                        <widget class="QFrame" name="commandsGroup">
+                          <layout class="QVBoxLayout" name="commandsLayout">
+                            <property name="spacing">
+                              <number>18</number>
+                            </property>
+                            <property name="leftMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="topMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="rightMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="bottomMargin">
+                              <number>22</number>
+                            </property>
+                            <item>
+                              <widget class="QLabel" name="commandTargetLabel">
+                                <property name="text">
+                                  <string>Capteur 44666</string>
+                                </property>
+                              </widget>
+                            </item>
+                            <item>
+                              <layout class="QHBoxLayout" name="syncRow">
+                                <property name="spacing">
+                                  <number>18</number>
+                                </property>
+                                <item>
+                                  <layout class="QVBoxLayout" name="syncTitles">
+                                    <property name="spacing">
+                                      <number>5</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="syncTitle">
+                                        <property name="text">
+                                          <string>Date et version</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLabel" name="syncHint">
+                                        <property name="text">
+                                          <string>Synchroniser l’horloge et demander la version du firmware.</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                                <item>
+                                  <spacer name="syncStretch">
+                                    <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                      <size>
+                                        <width>10</width>
+                                        <height>10</height>
+                                      </size>
+                                    </property>
+                                  </spacer>
+                                </item>
+                                <item>
+                                  <widget class="QPushButton" name="btnSynchroDateTime">
+                                    <property name="text">
+                                      <string>Synchroniser</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                              </layout>
+                            </item>
+                            <item>
+                              <widget class="QFrame" name="ledPanel">
+                                <layout class="QVBoxLayout" name="ledLayout">
+                                  <property name="spacing">
+                                    <number>14</number>
+                                  </property>
+                                  <property name="leftMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <property name="topMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <property name="rightMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <property name="bottomMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <item>
+                                    <widget class="QLabel" name="ledTitle">
+                                      <property name="text">
+                                        <string>Témoin lumineux</string>
+                                      </property>
+                                    </widget>
+                                  </item>
+                                  <item>
+                                    <layout class="QHBoxLayout" name="ledPresets">
+                                      <property name="spacing">
+                                        <number>12</number>
+                                      </property>
+                                      <item>
+                                        <widget class="QPushButton" name="btnSlowBlink">
+                                          <property name="text">
+                                            <string>Lent</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                      <item>
+                                        <widget class="QPushButton" name="btnFastBlink">
+                                          <property name="text">
+                                            <string>Rapide</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                      <item>
+                                        <spacer name="ledStretch">
+                                          <property name="orientation">
+                                            <enum>Qt::Horizontal</enum>
+                                          </property>
+                                          <property name="sizeHint" stdset="0">
+                                            <size>
+                                              <width>10</width>
+                                              <height>10</height>
+                                            </size>
+                                          </property>
+                                        </spacer>
+                                      </item>
+                                    </layout>
+                                  </item>
+                                  <item>
+                                    <layout class="QHBoxLayout" name="customBlinkRow">
+                                      <property name="spacing">
+                                        <number>12</number>
+                                      </property>
+                                      <item>
+                                        <widget class="QLabel" name="blinkCaption">
+                                          <property name="text">
+                                            <string>Période personnalisée (ms)</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                      <item>
+                                        <widget class="QLineEdit" name="lneBlink">
+                                          <property name="text">
+                                            <string>500</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                      <item>
+                                        <widget class="QPushButton" name="btnBlink">
+                                          <property name="text">
+                                            <string>Appliquer</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                    </layout>
+                                  </item>
+                                </layout>
+                              </widget>
+                            </item>
+                            <item>
+                              <widget class="QFrame" name="barPanel">
+                                <layout class="QVBoxLayout" name="barLayout">
+                                  <property name="spacing">
+                                    <number>14</number>
+                                  </property>
+                                  <property name="leftMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <property name="topMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <property name="rightMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <property name="bottomMargin">
+                                    <number>18</number>
+                                  </property>
+                                  <item>
+                                    <widget class="QLabel" name="barTitle">
+                                      <property name="text">
+                                        <string>Bargraphe à 10 LEDs</string>
+                                      </property>
+                                    </widget>
+                                  </item>
+                                  <item>
+                                    <layout class="QHBoxLayout" name="bargraphRow">
+                                      <property name="spacing">
+                                        <number>12</number>
+                                      </property>
+                                      <item>
+                                        <widget class="QLabel" name="bargraphCaption">
+                                          <property name="text">
+                                            <string>Valeur binaire · 0 à 1023</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                      <item>
+                                        <widget class="QLineEdit" name="lneBargraph">
+                                          <property name="text">
+                                            <string>10</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                      <item>
+                                        <widget class="QPushButton" name="btnBargraph">
+                                          <property name="text">
+                                            <string>Envoyer</string>
+                                          </property>
+                                        </widget>
+                                      </item>
+                                    </layout>
+                                  </item>
+                                  <item>
+                                    <widget class="QLabel" name="bargraphPreview">
+                                      <property name="text">
+                                        <string>○  ●  ○  ●  ○  ○  ○  ○  ○  ○</string>
+                                      </property>
+                                    </widget>
+                                  </item>
+                                </layout>
+                              </widget>
+                            </item>
+                            <item>
+                              <widget class="QLabel" name="commandHint">
+                                <property name="text">
+                                  <string>Confirmer l’exécution sur le montage. L’aperçu représente la valeur saisie.</string>
+                                </property>
+                                <property name="wordWrap">
+                                  <bool>true</bool>
+                                </property>
+                              </widget>
+                            </item>
+                          </layout>
+                        </widget>
+                      </item>
+                      <item>
+                        <spacer name="hardwareStretch">
+                          <property name="orientation">
+                            <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                            <size>
+                              <width>10</width>
+                              <height>10</height>
+                            </size>
+                          </property>
+                        </spacer>
+                      </item>
+                    </layout>
+                  </widget>
+                  <widget class="QWidget" name="settingsPage">
+                    <layout class="QVBoxLayout" name="settingsLayout">
+                      <property name="spacing">
+                        <number>18</number>
+                      </property>
+                      <property name="leftMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                        <number>0</number>
+                      </property>
+                      <item>
+                        <widget class="QFrame" name="connectionGroup">
+                          <layout class="QVBoxLayout" name="connectionLayout">
+                            <property name="spacing">
+                              <number>14</number>
+                            </property>
+                            <property name="leftMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="topMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="rightMargin">
+                              <number>22</number>
+                            </property>
+                            <property name="bottomMargin">
+                              <number>22</number>
+                            </property>
+                            <item>
+                              <widget class="QLabel" name="connectionTitle">
+                                <property name="text">
+                                  <string>Paramètres du broker</string>
+                                </property>
+                              </widget>
+                            </item>
+                            <item>
+                              <widget class="QComboBox" name="profileCombo">
+                                <item>
+                                  <property name="text">
+                                    <string>Paramètres du cours</string>
+                                  </property>
+                                </item>
+                                <item>
+                                  <property name="text">
+                                    <string>Arduino REN · 192.168.1.1</string>
+                                  </property>
+                                </item>
+                                <item>
+                                  <property name="text">
+                                    <string>Personnalisé</string>
+                                  </property>
+                                </item>
+                              </widget>
+                            </item>
+                            <item>
+                              <layout class="QHBoxLayout" name="addressFields">
+                                <property name="spacing">
+                                  <number>18</number>
+                                </property>
+                                <item>
+                                  <layout class="QVBoxLayout" name="lneHostField">
+                                    <property name="spacing">
+                                      <number>7</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="lneHostCaption">
+                                        <property name="text">
+                                          <string>Adresse IP / hôte</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLineEdit" name="lneHost">
+                                        <property name="text">
+                                          <string>10.120.2.3</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                                <item>
+                                  <layout class="QVBoxLayout" name="spnPortField">
+                                    <property name="spacing">
+                                      <number>7</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="spnPortCaption">
+                                        <property name="text">
+                                          <string>Port</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QSpinBox" name="spnPort">
+                                        <property name="minimum">
+                                          <number>1</number>
+                                        </property>
+                                        <property name="maximum">
+                                          <number>65535</number>
+                                        </property>
+                                        <property name="value">
+                                          <number>1883</number>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                              </layout>
+                            </item>
+                            <item>
+                              <layout class="QHBoxLayout" name="credentialsFields">
+                                <property name="spacing">
+                                  <number>18</number>
+                                </property>
+                                <item>
+                                  <layout class="QVBoxLayout" name="lneUsernameField">
+                                    <property name="spacing">
+                                      <number>7</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="lneUsernameCaption">
+                                        <property name="text">
+                                          <string>Utilisateur</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLineEdit" name="lneUsername">
+                                        <property name="text">
+                                          <string>mos_user</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                                <item>
+                                  <layout class="QVBoxLayout" name="lnePasswordField">
+                                    <property name="spacing">
+                                      <number>7</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="lnePasswordCaption">
+                                        <property name="text">
+                                          <string>Mot de passe</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLineEdit" name="lnePassword">
+                                        <property name="text">
+                                          <string>mos_user</string>
+                                        </property>
+                                        <property name="echoMode">
+                                          <enum>QLineEdit::Password</enum>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                              </layout>
+                            </item>
+                            <item>
+                              <layout class="QHBoxLayout" name="topicFields">
+                                <property name="spacing">
+                                  <number>18</number>
+                                </property>
+                                <item>
+                                  <layout class="QVBoxLayout" name="spnSensorField">
+                                    <property name="spacing">
+                                      <number>7</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="spnSensorCaption">
+                                        <property name="text">
+                                          <string>Mon identifiant</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QSpinBox" name="spnSensor">
+                                        <property name="minimum">
+                                          <number>1</number>
+                                        </property>
+                                        <property name="maximum">
+                                          <number>999999999</number>
+                                        </property>
+                                        <property name="value">
+                                          <number>44666</number>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                                <item>
+                                  <layout class="QVBoxLayout" name="lnePrefixField">
+                                    <property name="spacing">
+                                      <number>7</number>
+                                    </property>
+                                    <item>
+                                      <widget class="QLabel" name="lnePrefixCaption">
+                                        <property name="text">
+                                          <string>Préfixe des topics</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                    <item>
+                                      <widget class="QLineEdit" name="lnePrefix">
+                                        <property name="text">
+                                          <string>/iot</string>
+                                        </property>
+                                      </widget>
+                                    </item>
+                                  </layout>
+                                </item>
+                              </layout>
+                            </item>
+                            <item>
+                              <widget class="QComboBox" name="caseCombo">
+                                <item>
+                                  <property name="text">
+                                    <string>Commandes : MAJUSCULES</string>
+                                  </property>
+                                </item>
+                                <item>
+                                  <property name="text">
+                                    <string>Commandes : minuscules</string>
+                                  </property>
+                                </item>
+                              </widget>
+                            </item>
+                            <item>
+                              <widget class="QLabel" name="topicHint">
+                                <property name="text">
+                                  <string>Même broker que l’Arduino. La casse des topics de commande doit correspondre au firmware.</string>
+                                </property>
+                                <property name="wordWrap">
+                                  <bool>true</bool>
+                                </property>
+                              </widget>
+                            </item>
+                            <item>
+                              <layout class="QHBoxLayout" name="connectionButtons">
+                                <property name="spacing">
+                                  <number>10</number>
+                                </property>
+                                <item>
+                                  <widget class="QPushButton" name="btnConnect">
+                                    <property name="text">
+                                      <string>Connecter</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                                <item>
+                                  <widget class="QPushButton" name="btnDisconnect">
+                                    <property name="text">
+                                      <string>Déconnecter</string>
+                                    </property>
+                                  </widget>
+                                </item>
+                                <item>
+                                  <spacer name="connectionStretch">
+                                    <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                    </property>
+                                    <property name="sizeHint" stdset="0">
+                                      <size>
+                                        <width>10</width>
+                                        <height>10</height>
+                                      </size>
+                                    </property>
+                                  </spacer>
+                                </item>
+                              </layout>
+                            </item>
+                          </layout>
+                        </widget>
+                      </item>
+                      <item>
+                        <layout class="QHBoxLayout" name="demoLayout">
+                          <property name="spacing">
+                            <number>14</number>
+                          </property>
+                          <item>
+                            <widget class="QLabel" name="demoHint">
+                              <property name="text">
+                                <string>Sans matériel ? Utilisez la démonstration locale.</string>
+                              </property>
+                            </widget>
+                          </item>
+                          <item>
+                            <spacer name="demoStretch">
+                              <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                              </property>
+                              <property name="sizeHint" stdset="0">
+                                <size>
+                                  <width>10</width>
+                                  <height>10</height>
+                                </size>
+                              </property>
+                            </spacer>
+                          </item>
+                          <item>
+                            <widget class="QPushButton" name="btnDemo">
+                              <property name="text">
+                                <string>Lancer la démo</string>
+                              </property>
+                            </widget>
+                          </item>
+                        </layout>
+                      </item>
+                      <item>
+                        <spacer name="settingsStretch">
+                          <property name="orientation">
+                            <enum>Qt::Vertical</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                            <size>
+                              <width>10</width>
+                              <height>10</height>
+                            </size>
+                          </property>
+                        </spacer>
+                      </item>
+                    </layout>
+                  </widget>
+                  <widget class="QWidget" name="logsPage">
+                    <layout class="QVBoxLayout" name="logsLayout">
+                      <property name="spacing">
+                        <number>12</number>
+                      </property>
+                      <property name="leftMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="topMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="rightMargin">
+                        <number>0</number>
+                      </property>
+                      <property name="bottomMargin">
+                        <number>0</number>
+                      </property>
+                      <item>
+                        <widget class="QLabel" name="logCaption">
+                          <property name="text">
+                            <string>ÉVÉNEMENTS MQTT ET APPLICATION</string>
+                          </property>
+                        </widget>
+                      </item>
+                      <item>
+                        <widget class="QPlainTextEdit" name="logView">
+                          <property name="readOnly">
+                            <bool>true</bool>
+                          </property>
+                        </widget>
+                      </item>
+                    </layout>
+                  </widget>
+                </widget>
+              </item>
+            </layout>
+          </widget>
+        </item>
+      </layout>
+    </widget>
+    <widget class="QStatusBar" name="statusbar" />
+  </widget>
+  <resources />
+  <connections />
+</ui>

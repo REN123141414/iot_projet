@@ -23,3 +23,16 @@ node_modules/
 
 # Identifiants Arduino locaux
 arduino_secrets.h
+
+# IHM Python environments and generated files
+IHM/**/.venv*/
+IHM/**/__pycache__/
+IHM/**/.pytest_cache/
+IHM/**/*.pyc
+IHM/**/*.db
+IHM/**/*.db-shm
+IHM/**/*.db-wal
+IHM/config.tmp
+
+# Previous IHM backup
+IHM_backup/

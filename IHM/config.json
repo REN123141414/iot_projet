@@ -1,0 +1,9 @@
+{
+  "host": "192.168.1.1",
+  "port": 1883,
+  "username": "mos_user",
+  "sensor_id": 44666,
+  "prefix": "/iot",
+  "uppercase": true,
+  "database": "IOT.db"
+}
