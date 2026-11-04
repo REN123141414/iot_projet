@@ -1,62 +1,116 @@
-# Projet IoT - Capteur de temperature et d'humidite
+# TempHumiX — Projet IoT
 
-## Presentation
+**Ruilang REN — IMT Nord Europe**
 
-Ce projet est realise dans le cadre du TP IoT de l'IMT Nord Europe.
+Ce projet réalise un système de mesure de température et d’humidité, depuis la simulation jusqu’à la supervision d’un Arduino par MQTT.
 
-L'objectif est de concevoir et programmer un systeme de mesure de temperature et d'humidite avec un microcontroleur Arduino.
+## Organisation
 
-## Objectifs
+| Dossier | Contenu |
+|---|---|
+| `simulide/` | Circuits et programmes de simulation avec Arduino UNO R3 |
+| `arduino/` | Programmes pour Arduino UNO R4 WiFi |
+| `IHM/` | Applications Python : MQTT, interface graphique, SQLite et courbes |
+| `docs/` | Rapport du projet |
 
-- Simuler des circuits electroniques avec SimulIDE.
-- Programmer un Arduino UNO R3.
-- Utiliser un capteur de temperature et d'humidite DHT22.
-- Afficher les mesures sur un ecran LCD I2C.
-- Transmettre des donnees via une liaison serie.
-- Etudier la communication IoT avec le protocole MQTT.
+[Consulter le rapport PDF](docs/Rapport_Iot_REN%20Ruilang.pdf)
 
-## Organisation du projet
+## Matériel et fonctionnalités
 
-- simulide/clignotement_led/ : premier circuit avec une LED.
-- README.md : documentation du projet.
-- .gitignore : fichiers exclus du suivi Git.
+Le dispositif utilise un capteur DHT22, un écran LCD I2C et des LED.
 
-## Premier exercice : clignotement LED
+- Acquisition et affichage de la température et de l’humidité.
+- Publication des mesures via MQTT.
+- Synchronisation de l’horloge par NTP.
+- Commande à distance des mesures, du clignotement et du bargraphe.
+- Archivage SQLite et consultation des courbes historiques.
 
-Le premier circuit contient :
-- Un Arduino UNO R3
-- Une LED
-- Une resistance de 100 ohms
+## Progression de l’IHM
 
-La LED est connectee a la broche D2 de l'Arduino.
+Les programmes intermédiaires sont conservés dans `IHM/` :
 
-Le programme allume la LED pendant 500 ms, puis l'eteint pendant 500 ms.
+1. `console_mqtt_lecture/` : réception MQTT.
+2. `console_mqtt_ecriture/` : envoi de commandes.
+3. `mqtt_thread/` : communication dans un thread indépendant.
+4. `ihm_mqtt_simple/` : interface finale, archivage et historique.
 
-La frequence de clignotement est de 1 Hz.
+Le Challenge optionnel n’est pas inclus.
 
-## Outils utilises
+## Technologies
 
-- SimulIDE 1.1.0-SR2
-- Arduino CLI
-- Git et GitHub
-- macOS Apple Silicon
+Python, PySide6, Qt Designer, QSS, Paho MQTT, SQLite et Matplotlib.
 
-## Utilisation
+## Lancement de l’interface
 
-Pour compiler le premier programme :
+Python 3.12 est recommandé. Depuis la racine du dépôt :
 
-cd simulide/clignotement_led
+### macOS / Linux
 
-arduino-cli compile --fqbn arduino:avr:uno --output-dir build clignotement_led.ino
+```bash
+cd IHM
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python main.py
+```
 
-Le fichier HEX genere peut ensuite etre charge dans SimulIDE pour lancer la simulation.
+### Windows — invite de commandes
 
-## Suivi du projet avec Git
+```bat
+cd IHM
+py -3.12 -m venv .venv
+.venv\Scripts\activate.bat
+python -m pip install -r requirements.txt
+python main.py
+```
 
-Ce projet utilise Git pour conserver l'historique des modifications.
+Dans PyCharm, sélectionner l’interpréteur de cet environnement et exécuter `IHM/main.py`, avec `IHM/` comme répertoire de travail.
 
-Les différentes étapes du projet IoT sont enregistrées
-avec des commits.
+PySide6 est fixé à la version 6.8.3. Le lanceur local `run_temphumix.py` du Mac de l’auteur n’est pas inclus dans le dépôt.
 
-Une branche documentation est utilisée pour améliorer
-le README.md avant son intégration dans la branche main.
+## Connexion MQTT
+
+| Paramètre | Valeur du TP |
+|---|---|
+| Broker | `192.168.1.1` |
+| Port | `1883` |
+| Capteur | `44666` |
+| Préfixe | `/iot` |
+| Topics | MAJUSCULES |
+| Serveur NTP du dispositif | `192.168.1.254` |
+
+L’ordinateur et le dispositif doivent avoir accès au réseau de l’expérience. Renseigner les identifiants MQTT du TP dans l’interface.
+
+Cliquer sur **Connecter**, puis **Synchroniser**, et démarrer les mesures. Les commandes permettent ensuite de contrôler le dispositif.
+
+Sans matériel, le mode démonstration permet de découvrir l’interface.
+
+### Topics reçus
+
+- `/iot/TEMPERATURE_44666`
+- `/iot/HUMIDITY_44666`
+- `/iot/GET_DATE_44666`
+- `/iot/VERSION_44666`
+
+### Topics de commande
+
+- `/iot/COMMAND_44666`
+- `/iot/BLINK_44666`
+- `/iot/BARGRAPH_44666`
+
+Les commandes sont envoyées sans retain. Un acquittement du broker ne garantit pas l’exécution matérielle.
+
+## Base de données et historique
+
+La base `IHM/IOT.db` est créée lors de l’acquisition réelle.
+
+La table `IOT_DATA` contient :
+`Id_capteur`, `Date`, `Version`, `Temperature`, `Humidite`.
+
+L’historique permet de sélectionner un intervalle de dates et de tracer les courbes. Effacer les courbes ne supprime pas les données.
+
+Le mode démonstration utilise une base séparée : `IOT_demo.db`. Les bases locales et les environnements Python ne sont pas versionnés.
+
+## Gestion du projet
+
+Git conserve les étapes du développement. La version finale du code et le rapport sont disponibles sur la branche `main`.
