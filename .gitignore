@@ -36,3 +36,7 @@ IHM/config.tmp
 
 # Previous IHM backup
 IHM_backup/
+
+# Local IDE settings and Mac launcher
+IHM/.idea/
+IHM/run_temphumix.py
